@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import Cart from '../Cart/Cart';
 
 
-const ActiveAuction = ({ displayMsg, displayRemove }) => {
+const ActiveAuction = ({ displayMsg, displayRemove, handleCount, reduceCount }) => {
 
     
     
@@ -87,12 +87,12 @@ const ActiveAuction = ({ displayMsg, displayRemove }) => {
 
     return (
         <div className='flex gap-6 align-middle mx-auto pb-24'>
-            <div className=" flex-2 overflow-x-auto bg-white w-[750px] rounded-3xl p-8 border border-black">
-                <table className="table ">
+            <div className=" flex-2 overflow-x-auto bg-white w-[750px] rounded-3xl px-8 py-16 ">
+                <table className="table border border-black border-b-0">
                     {/* head */}
                     <thead >
-                        <tr>
-                            <th className=' border-b border-black'>Items </th>
+                        <tr className='h-20 font-bold text-black'>
+                            <th className=' mr-7 border-b border-black'>Items </th>
                             <th className=' border-b border-black'>Current Bid</th>
                             <th className=' border-b border-black'>Time Left</th>
                             <th className=' border-b border-black'>Bid Now</th>
@@ -103,7 +103,7 @@ const ActiveAuction = ({ displayMsg, displayRemove }) => {
 
                         {
                             items.map(item => (
-                                <tr key={item.id}>
+                                <tr key={item.id} >
 
                                     <td className=' border-b border-black'>
                                         <div className="flex items-center gap-3 w-9/12">
@@ -120,14 +120,14 @@ const ActiveAuction = ({ displayMsg, displayRemove }) => {
                                         </div>
                                     </td>
                                     <td className=' border-b border-black'>
-                                        {item.currentBidPrice}
+                                        ${item.currentBidPrice}
 
                                     </td>
                                     <td className=' border-b border-black'>{item.timeLeft}</td>
                                     <th className={`border-b border-black `}>
                                         
                                         <span className={`${added.includes(item.id) ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
-                                            <button className={`btn btn-ghost btn-xs `} disabled={added.includes(item.id)} onClick={() => { handleBtnClick(item.id); displayMsg() }}>
+                                            <button className={`btn btn-ghost btn-xs `} disabled={added.includes(item.id)} onClick={() => { handleBtnClick(item.id); displayMsg(); handleCount(item) }}>
                                                 {
                                                     // <FaRegHeart size={23} />
                                                     // added.map(AddedProduct =>{
@@ -165,7 +165,7 @@ const ActiveAuction = ({ displayMsg, displayRemove }) => {
                     </div>
 
                     {
-                        items.map(item => <Cart displayRemove={displayRemove} key={`cart-${item.id}`} handleReducePrice={handleReducePrice} added={added} item={item} handleCrossButton={handleCrossButton}></Cart>)
+                        items.map(item => <Cart reduceCount={reduceCount} displayRemove={displayRemove} key={`cart-${item.id}`} handleReducePrice={handleReducePrice} added={added} item={item} handleCrossButton={handleCrossButton}></Cart>)
                     }
 
                     

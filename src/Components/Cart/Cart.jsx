@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 
-const Cart = ({ added, item, handleCrossButton, handleReducePrice, displayRemove }) => {
+const Cart = ({ added, item, handleCrossButton, handleReducePrice, displayRemove, reduceCount }) => {
     // const [inCart, setInCart] = useState([]);
     // console.log(added);
     // console.log(item);
@@ -9,6 +9,7 @@ const Cart = ({ added, item, handleCrossButton, handleReducePrice, displayRemove
     //     setInCart([...inCart, item]);
     //     console.log(inCart - 1);
     // }
+    // console.log(typeof item);
     return (
 
 
@@ -24,7 +25,7 @@ const Cart = ({ added, item, handleCrossButton, handleReducePrice, displayRemove
                         <h4>Bids:{item.bidsCount}</h4>
                     </div>
                 </div>
-                <button onClick={() => { handleCrossButton(item.id); handleReducePrice(item.id); displayRemove()}} className='btn'>X</button>
+                <button onClick={() => { handleCrossButton(item.id); handleReducePrice(item.id); displayRemove(); reduceCount(item) }} className='btn'>X</button>
             </div >
         ) : null
         
