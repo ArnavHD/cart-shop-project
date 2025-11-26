@@ -4,20 +4,22 @@ import Hero from './Components/hero/Hero'
 import Navbar from './Components/Navbar/Navbar'
 import ActiveAuction from './Components/ActiveAuction/ActiveAuction';
 // import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function App() {
 
-  // const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(1);
 
-  // const counterIncrease = () =>{
+  // const counterIncrease = (added) =>{
     
-  //   setCount(count + 1);
-  //   console.log(count);
+  //   console.log(added.length + 1);
+    
   // }
-  // const counterDecrease = () =>{
+  // const counterDecrease = (added) =>{
     
   //   setCount(count - 1);
+  //   console.log(count);
   // }
   
 
@@ -34,7 +36,7 @@ function App() {
       </div>
 
       <div className='table-cart-container mx-36'>
-        <ActiveAuction ></ActiveAuction>
+        <ActiveAuction  ></ActiveAuction>
       </div>
 
     {/* </div> */}

@@ -1,8 +1,14 @@
-import React from 'react';
+// import React, { useState } from 'react';
 
-const Cart = ({ added, item, handleCrossButton, handleReducePrice }) => {
-    console.log(added);
+const Cart = ({ added, item, handleCrossButton, handleReducePrice, counterIncrease }) => {
+    // const [inCart, setInCart] = useState([]);
+    // console.log(added);
     // console.log(item);
+
+    // const inCartBag = (item)=>{
+    //     setInCart([...inCart, item]);
+    //     console.log(inCart - 1);
+    // }
     return (
 
 
@@ -18,7 +24,7 @@ const Cart = ({ added, item, handleCrossButton, handleReducePrice }) => {
                         <h4>Bids:{item.bidsCount}</h4>
                     </div>
                 </div>
-                <button onClick={() => { handleCrossButton(item.id); handleReducePrice(item.id); }} className='btn'>X</button>
+                <button onClick={() => { handleCrossButton(item.id); handleReducePrice(item.id); counterIncrease(added); }} className='btn'>X</button>
             </div >
         ) : null
         

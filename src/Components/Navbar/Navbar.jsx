@@ -19,7 +19,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                             <div className="indicator">
                                 <button><CiBellOn size={25} /></button>
-                                <span className="badge badge-sm indicator-item">5</span>
+                                {/* <span className="badge badge-sm indicator-item">5</span> */}
                             </div>
                         </div>
                         <div
