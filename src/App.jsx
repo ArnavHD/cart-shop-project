@@ -29,7 +29,7 @@ function App() {
       <Hero></Hero>
 
       <div className=' ml-36 mt-32 mb-8'>
-          <h2 className=' text-4xl '>Active Auctions</h2>
+          <h2 className=' text-4xl mb-5'>Active Auctions</h2>
         <p className='text-[#0E2954]'>Discover and bid on extraordinary items</p>
       </div>
 

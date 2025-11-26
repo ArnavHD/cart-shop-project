@@ -148,7 +148,8 @@ const ActiveAuction = ( ) => {
             </div>
             
             <div className='flex-1  bg-white rounded-3xl h-[80%] p-8 space-y-8'>
-                <h2 className='flex gap-2.5'><FaRegHeart size={20} />Favorite Items</h2>
+                <h2 className='flex gap-2.5 text-blue-400 text-4xl justify-center'><FaRegHeart size={35} />Favorite Items</h2>
+                <hr className=' border-2' />
                 <div className='cart-container flex flex-col gap-8  bg-white'>
 
                     
@@ -163,9 +164,11 @@ const ActiveAuction = ( ) => {
 
                     
                 </div>
-                <div className='flex gap-34'>
-                    <h2>Total Bids Amount:</h2>
-                    <h2>${price}</h2>
+                <hr className='border-2' />
+                <div className='flex justify-between gap-10'>
+                    
+                    <h2 className=' text-2xl '>Total Bids Amount:</h2>
+                    <h2 className='text-2xl '>${price}</h2>
                 </div>
             </div>
 
