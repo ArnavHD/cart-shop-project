@@ -3,7 +3,7 @@ import { CiBellOn } from "react-icons/ci";
 
 const Navbar = () => {
     return (
-        <div className='sticky top-0 z-50'>
+        <div className=''>
             <div className="navbar bg-base-100 shadow-sm px-36 ">
                 <div className="flex-1">
                     <a className="btn btn-ghost text-3xl"><div className='flex'><span className=' text-[#003EA4]'>Auction</span><span className='text-[#FFD337]'>Gallery</span></div></a>

@@ -6,6 +6,7 @@ import ActiveAuction from './Components/ActiveAuction/ActiveAuction';
 // import { useState } from 'react';
 // import { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
+import Footer from './Components/Footer/Footer';
 
 const Msg = ({ closeToast, toastProps }) => (
   <div>
@@ -17,6 +18,8 @@ const Msg = ({ closeToast, toastProps }) => (
 
 
 function App() {
+
+  
 
   const displayMsg = () => {
           toast("Item Added To Your Favorite List!!");
@@ -44,7 +47,7 @@ function App() {
   return (
     <>
 
-      {/* <div className=' bg-[#000000]'> */}
+      <div >
       <Navbar></Navbar>
       <Hero></Hero>
 
@@ -59,7 +62,10 @@ function App() {
 
       <ToastContainer />
 
-    {/* </div> */}
+      <Footer></Footer>
+
+    </div>
+
       
       
     </>
