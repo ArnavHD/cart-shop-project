@@ -86,7 +86,7 @@ const ActiveAuction = ({ displayMsg, displayRemove }) => {
 
 
     return (
-        <div className='flex gap-6 align-middle mx-auto '>
+        <div className='flex gap-6 align-middle mx-auto pb-24'>
             <div className=" flex-2 overflow-x-auto bg-white w-[750px] rounded-3xl p-8 border border-black">
                 <table className="table ">
                     {/* head */}
