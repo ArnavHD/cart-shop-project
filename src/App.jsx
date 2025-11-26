@@ -5,9 +5,27 @@ import Navbar from './Components/Navbar/Navbar'
 import ActiveAuction from './Components/ActiveAuction/ActiveAuction';
 // import { useState } from 'react';
 // import { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+
+const Msg = ({ closeToast, toastProps }) => (
+  <div>
+    Lorem ipsum dolor {toastProps.position}
+    <button>Retry</button>
+    <button onClick={closeToast}>Close</button>
+  </div>
+);
 
 
 function App() {
+
+  const displayMsg = () => {
+          toast("Item Added To Your Favorite List!!");
+          // toast(<Msg />) would also work
+      };
+
+  const displayRemove = () =>{
+    toast.warn("Item Removed From Favorites!!");
+  }
 
   // const [count, setCount] = useState(1);
 
@@ -36,8 +54,10 @@ function App() {
       </div>
 
       <div className='table-cart-container mx-36'>
-        <ActiveAuction  ></ActiveAuction>
+        <ActiveAuction displayMsg={displayMsg} displayRemove={displayRemove} ></ActiveAuction>
       </div>
+
+      <ToastContainer />
 
     {/* </div> */}
       

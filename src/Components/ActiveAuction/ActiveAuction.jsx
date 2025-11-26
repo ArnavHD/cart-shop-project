@@ -3,7 +3,11 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import Cart from '../Cart/Cart';
 
-const ActiveAuction = () => {
+
+const ActiveAuction = ({ displayMsg, displayRemove }) => {
+
+    
+    
     const [items, setItems] = useState([]);
     const [added, setAdded] = useState([]);
     // const [inCart, setInCart] = useState([])
@@ -121,8 +125,9 @@ const ActiveAuction = () => {
                                     </td>
                                     <td className=' border-b border-black'>{item.timeLeft}</td>
                                     <th className={`border-b border-black `}>
+                                        
                                         <span className={`${added.includes(item.id) ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
-                                            <button className={`btn btn-ghost btn-xs `} disabled={added.includes(item.id)} onClick={() => { handleBtnClick(item.id); }}>
+                                            <button className={`btn btn-ghost btn-xs `} disabled={added.includes(item.id)} onClick={() => { handleBtnClick(item.id); displayMsg() }}>
                                                 {
                                                     // <FaRegHeart size={23} />
                                                     // added.map(AddedProduct =>{
@@ -135,6 +140,7 @@ const ActiveAuction = () => {
                                                 }
 
                                             </button>
+                                            
                                         </span>
                                         
                                     </th>
@@ -159,7 +165,7 @@ const ActiveAuction = () => {
                     </div>
 
                     {
-                        items.map(item => <Cart key={`cart-${item.id}`} handleReducePrice={handleReducePrice} added={added} item={item} handleCrossButton={handleCrossButton}></Cart>)
+                        items.map(item => <Cart displayRemove={displayRemove} key={`cart-${item.id}`} handleReducePrice={handleReducePrice} added={added} item={item} handleCrossButton={handleCrossButton}></Cart>)
                     }
 
                     
